@@ -1,0 +1,226 @@
+{
+    "id": 1,
+    "name": "White label name",
+    "sections": [
+        {
+            "sectionId": "logo",
+            "sectionName": "Logo",
+            "cssCustomProperties": [
+                {
+                    "type": "image",
+                    "propertyName": "Page header logo",
+                    "property": "--page-header-logo",
+                    "value": {
+                        "light": null,
+                        "dark": null
+                    }
+                }
+            ]
+        },
+        {
+            "sectionId": "colours",
+            "sectionName": "Colours",
+            "cssCustomProperties": [
+                {
+                    "type": "colour",
+                    "propertyName": "Page background colour",
+                    "property": "--page-background-colour",
+                    "value": {
+                        "light": "#fff",
+                        "dark": "#444"
+                    }
+                },
+                {
+                    "type": "colour",
+                    "propertyName": "Primary brand colour",
+                    "property": "--primary-brand-colour",
+                    "value": {
+                        "light": "#f00",
+                        "dark": "#600"
+                    }
+                },
+                {
+                    "type": "colour",
+                    "propertyName": "Secondary brand colour",
+                    "property": "--secondary-brand-colour",
+                    "value": {
+                        "light": "#0f0",
+                        "dark": "#060"
+                    }
+                }
+            ]
+        },
+        {
+            "sectionId": "text",
+            "sectionName": "Headings and text",
+            "cssCustomProperties": [
+                {
+                    "type": "size",
+                    "propertyName": "Body text size",
+                    "property": "--body-text-size",
+                    "value": "1rem"
+                },
+                {
+                    "type": "colour",
+                    "propertyName": "Body text colour",
+                    "property": "--body-text-colour",
+                    "includeColours": ["--primary-brand-colour", "--secondary-brand-colour"],
+                    "value": {
+                        "light": "#444",
+                        "dark": "#ddd"
+                    }
+                },
+                {
+                    "type": "size",
+                    "propertyName": "Heading 1 size",
+                    "property": "--heading1-size",
+                    "value": "1.6rem"
+                },
+                {
+                    "type": "colour",
+                    "propertyName": "Heading 1 colour",
+                    "property": "--heading1-colour",
+                    "includeColours": ["--body-text-colour", "--primary-brand-colour", "--secondary-brand-colour"],
+                    "value": {
+                        "light": "--body-text-colour",
+                        "dark": "--body-text-colour"
+                    }
+                },
+                {
+                    "type": "size",
+                    "propertyName": "Heading 2 size",
+                    "property": "--heading2-size",
+                    "value": "1.4rem"
+                },
+                {
+                    "type": "colour",
+                    "propertyName": "Heading 2 colour",
+                    "property": "--heading2-colour",
+                    "includeColours": ["--body-text-colour", "--primary-brand-colour", "--secondary-brand-colour"],
+                    "value": {
+                        "light": "--body-text-colour",
+                        "dark": "--body-text-colour"
+                    }
+                },
+                {
+                    "type": "size",
+                    "propertyName": "Heading 3 size",
+                    "property": "--heading3-size",
+                    "value": "1.2rem"
+                },
+                {
+                    "type": "colour",
+                    "propertyName": "Heading 3 colour",
+                    "property": "--heading3-colour",
+                    "includeColours": ["--body-text-colour", "--primary-brand-colour", "--secondary-brand-colour"],
+                    "value": {
+                        "light": "--body-text-colour",
+                        "dark": "--body-text-colour"
+                    }
+                },
+                {
+                    "type": "size",
+                    "propertyName": "Heading 4 size",
+                    "property": "--heading4-size",
+                    "value": "1.6rem"
+                },
+                {
+                    "type": "colour",
+                    "propertyName": "Heading 4 colour",
+                    "property": "--heading4-colour",
+                    "includeColours": ["--body-text-colour", "--primary-brand-colour", "--secondary-brand-colour"],
+                    "value": {
+                        "light": "--body-text-colour",
+                        "dark": "--body-text-colour"
+                    }
+                }
+            ]
+        },
+        {
+            "sectionId": "buttons",
+            "sectionName": "Buttons",
+            "cssCustomProperties": [
+                {
+                    "type": "colour",
+                    "propertyName": "Primary button background colour",
+                    "property": "--btn-primary-background-colour",
+                    "includeColours": ["--primary-brand-colour", "--secondary-brand-colour"],
+                    "value": {
+                        "light": "--primary-brand-colour",
+                        "dark": "--primary-brand-colour"
+                    }
+                },
+                {
+                    "type": "colour",
+                    "propertyName": "Primary button text colour",
+                    "property": "--btn-primary-text-colour",
+                    "includeColours": ["--body-text-colour", "--primary-brand-colour", "--secondary-brand-colour"],
+                    "value": {
+                        "light": "--body-text-colour",
+                        "dark": "--body-text-colour"
+                    }
+                },
+                {
+                    "type": "colour",
+                    "propertyName": "Secondary button background colour",
+                    "property": "--btn-secondary-background-colour",
+                    "includeColours": ["--primary-brand-colour", "--secondary-brand-colour"],
+                    "value": {
+                        "light": "--secondary-brand-colour",
+                        "dark": "--secondary-brand-colour"
+                    }
+                },
+                {
+                    "type": "colour",
+                    "propertyName": "Secondary button text colour",
+                    "property": "--btn-secondary-text-colour",
+                    "includeColours": ["--body-text-colour", "--primary-brand-colour", "--secondary-brand-colour"],
+                    "value": {
+                        "light": "--body-text-colour",
+                        "dark": "--body-text-colour"
+                    }
+                },
+                {
+                    "type": "colour",
+                    "propertyName": "Option button background colour (active)",
+                    "property": "--btn-option-active-background-colour",
+                    "includeColours": ["--primary-brand-colour", "--secondary-brand-colour"],
+                    "value": {
+                        "light": "--primary-brand-colour",
+                        "dark": "--primary-brand-colour"
+                    }
+                },
+                {
+                    "type": "colour",
+                    "propertyName": "Option button text colour (active)",
+                    "property": "--btn-option-active-text-colour",
+                    "includeColours": ["--body-text-colour", "--primary-brand-colour", "--secondary-brand-colour"],
+                    "value": {
+                        "light": "--body-text-colour",
+                        "dark": "--body-text-colour"
+                    }
+                },
+                {
+                    "type": "colour",
+                    "propertyName": "Option button background colour (inactive)",
+                    "property": "--btn-option-inactive-background-colour",
+                    "includeColours": ["--primary-brand-colour", "--secondary-brand-colour"],
+                    "value": {
+                        "light": "--secondary-brand-colour",
+                        "dark": "--secondary-brand-colour"
+                    }
+                },
+                {
+                    "type": "colour",
+                    "propertyName": "Option button text colour (inactive)",
+                    "property": "--btn-option-inactive-text-colour",
+                    "includeColours": ["--body-text-colour", "--primary-brand-colour", "--secondary-brand-colour"],
+                    "value": {
+                        "light": "--body-text-colour",
+                        "dark": "--body-text-colour"
+                    }
+                }
+            ]
+        }
+    ]
+}

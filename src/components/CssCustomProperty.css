@@ -1,0 +1,6 @@
+.css-custom-property-heading {
+    font-weight: normal;
+}
+.not-themed {
+    grid-column: 2 / span 2;
+}

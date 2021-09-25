@@ -1,0 +1,16 @@
+.section {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 33.3%);
+}
+.section-heading {
+    grid-column: 1 / -1;
+    font-weight: 200;
+    margin: 1rem 0 0.2rem 0;
+    border-bottom: 1px solid;
+}
+@media screen and (max-width: 50rem) {
+    .section {
+        grid-template-columns: 1fr;
+    }
+}
