@@ -1,5 +1,13 @@
 import './CssValue.css';
 import { CSS_VALUE_TYPE, THEME, makeUpperCaseFirstLetter } from '../utils';
+import data from '../data/whiteLabelData.json'; // TODO - use store or context
+
+const cssCustomProperties = data?.sections?.reduce?.((acc, section) => [
+    ...acc, 
+    ...section?.cssCustomProperties
+], []) ?? [];
+
+const getCssValueDetails = cssPropertyName => cssCustomProperties.find(ccp => ccp.property === cssPropertyName) ?? null;
 
 const CssValue = props => {
     const { 
@@ -49,20 +57,28 @@ const ColourValue = props => {
 
     return (
         <>
-            {showIncludeColours && (
-                <select value={cssValue ?? ''}>
-                    {includeColours.map(col => {
-                        return <option value={col}>{col}</option>
-                    })}
-                </select>
-            )}
-            <input 
-                id={id}
-                className="css-value-input"
-                type="color" 
-                data-theme={theme}
-                value={cssValue ?? ''}
-            />
+            {showIncludeColours && includeColours.map(col => {
+                const optName = getCssValueDetails(col)?.propertyName ?? col;
+                return (
+                    <div>
+                        <input type="radio" name={`col-${id}`} value={col} />
+                        {optName}
+                        <span className="css-value-colour-swatch" style={{backgroundColor: `var(${col})`}}></span>
+                    </div>
+                );
+            })}
+
+            <div>
+                <input type="radio" name={`col-${id}`} value="custom" />
+                Custom
+                <input 
+                    id={id}
+                    className="css-value-input"
+                    type="text" 
+                    data-theme={theme}
+                    value={cssValue ?? ''}
+                />
+            </div>                
         </>
     );
 };
