@@ -26,8 +26,8 @@
                     "propertyName": "Page background colour",
                     "property": "--page-background-colour",
                     "value": {
-                        "light": "#fff",
-                        "dark": "#444"
+                        "light": "#ffffff",
+                        "dark": "#444444"
                     }
                 },
                 {
@@ -35,8 +35,8 @@
                     "propertyName": "Primary brand colour",
                     "property": "--primary-brand-colour",
                     "value": {
-                        "light": "#f00",
-                        "dark": "#600"
+                        "light": "#ff0000",
+                        "dark": "#660000"
                     }
                 },
                 {
@@ -44,8 +44,8 @@
                     "propertyName": "Secondary brand colour",
                     "property": "--secondary-brand-colour",
                     "value": {
-                        "light": "#0f0",
-                        "dark": "#060"
+                        "light": "#00ff00",
+                        "dark": "#006600"
                     }
                 }
             ]
@@ -66,8 +66,18 @@
                     "property": "--body-text-colour",
                     "includeColours": ["--primary-brand-colour", "--secondary-brand-colour"],
                     "value": {
-                        "light": "#444",
-                        "dark": "#ddd"
+                        "light": "#444444",
+                        "dark": "#dddddd"
+                    }
+                },
+                {
+                    "type": "colour",
+                    "propertyName": "Link text colour",
+                    "property": "--link-text-colour",
+                    "includeColours": ["--primary-brand-colour", "--secondary-brand-colour"],
+                    "value": {
+                        "light": "#0000cc",
+                        "dark": "#ffffcc"
                     }
                 },
                 {

@@ -1,0 +1,6 @@
+.not-themed {
+    grid-column: 2 / span 2;
+}
+.css-value-label {
+    display: block;
+}

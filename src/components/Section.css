@@ -11,6 +11,6 @@
 }
 @media screen and (max-width: 50rem) {
     .section {
-        grid-template-columns: 1fr;
+        grid-template-columns: 100%;
     }
 }

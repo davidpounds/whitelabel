@@ -1,6 +1,7 @@
+.css-custom-property {
+    display: contents;
+}
 .css-custom-property-heading {
     font-weight: normal;
-}
-.not-themed {
-    grid-column: 2 / span 2;
+    font-size: 1.2rem;
 }

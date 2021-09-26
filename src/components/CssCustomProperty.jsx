@@ -1,31 +1,35 @@
 import './CssCustomProperty.css';
+import CssValue from './CssValue';
+import { THEME } from '../utils';
 
 const CssCustomProperty = props => {
     const { cssCustomProperty } = props;
     const {
-        // type,
+        type,
         propertyName,
-        // property,
-        // includeColours = [],
+        property,
+        includeColours = [],
         value,
     } = cssCustomProperty;
-    const themed = value?.constructor !== String && Object.keys(value).length === 2;
+    const themed = value?.constructor !== String && Object.keys(value).every(k => [THEME.LIGHT, THEME.DARK].includes(k));
 
-    const values = themed ? Object.entries(value) : [["global", value]];
+    const values = themed ? Object.entries(value).sort((a, b) => a.theme > b.theme ? 1 : -1) : [[THEME.GLOBAL, value]];
 
     return (
-        <>
-            <h3 className="css-custom-property-heading">{propertyName}</h3>
+        <fieldset className="css-custom-property">
+            <legend className="css-custom-property-heading">{propertyName}</legend>
             {values.map(([theme, cssValue]) => (
-                <input 
+                <CssValue
                     key={theme}
-                    type="text" 
-                    className={themed ? '' : 'not-themed'} 
-                    data-theme={theme}
-                    value={cssValue ?? ''}
+                    type={type}
+                    property={property}
+                    theme={theme} 
+                    themed={themed} 
+                    includeColours={includeColours}
+                    cssValue={cssValue} 
                 />
             ))}
-        </>
+        </fieldset>
     );
 };
 
