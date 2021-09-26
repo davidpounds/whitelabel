@@ -132,7 +132,7 @@
                     "type": "size",
                     "propertyName": "Heading 4 size",
                     "property": "--heading4-size",
-                    "value": "1.6rem"
+                    "value": "1rem"
                 },
                 {
                     "type": "colour",

@@ -1,13 +1,7 @@
 import './CssValue.css';
+import { useSelector } from 'react-redux';
+import { getWhiteLabelCssCustomProperties } from '../selectors';
 import { CSS_VALUE_TYPE, THEME, makeUpperCaseFirstLetter } from '../utils';
-import data from '../data/whiteLabelData.json'; // TODO - use store or context
-
-const cssCustomProperties = data?.sections?.reduce?.((acc, section) => [
-    ...acc, 
-    ...section?.cssCustomProperties
-], []) ?? [];
-
-const getCssValueDetails = cssPropertyName => cssCustomProperties.find(ccp => ccp.property === cssPropertyName) ?? null;
 
 const CssValue = props => {
     const { 
@@ -41,7 +35,7 @@ const CssValue = props => {
     }
 
     return (
-        <div className={`css-value ${themed ? '' : 'not-themed'}`}>
+        <div className={`css-value ${theme} ${themed ? '' : 'not-themed'}`}>
             <label htmlFor={id} className="css-value-label">{makeUpperCaseFirstLetter(labelText)}</label>
             {control}
         </div>
@@ -52,8 +46,11 @@ export default CssValue;
 
 const ColourValue = props => {
     const { id, theme, cssValue, includeColours = [] } = props;
+    const cssCustomProperties = useSelector(getWhiteLabelCssCustomProperties);
+    const getCssValueDetails = cssPropertyName => cssCustomProperties.find(ccp => ccp.property === cssPropertyName) ?? null;
 
     const showIncludeColours = Array.isArray(includeColours) && includeColours.length > 0;
+    const useIncludedColour = showIncludeColours && includeColours.includes(cssValue);
 
     return (
         <>
@@ -61,7 +58,7 @@ const ColourValue = props => {
                 const optName = getCssValueDetails(col)?.propertyName ?? col;
                 return (
                     <div>
-                        <input type="radio" name={`col-${id}`} value={col} />
+                        <input type="radio" name={`col-${id}`} value={col} checked={col === cssValue} />
                         {optName}
                         <span className="css-value-colour-swatch" style={{backgroundColor: `var(${col})`}}></span>
                     </div>
@@ -69,14 +66,18 @@ const ColourValue = props => {
             })}
 
             <div>
-                <input type="radio" name={`col-${id}`} value="custom" />
-                Custom
+                {showIncludeColours && (
+                    <>
+                        <input type="radio" name={`col-${id}`} value="custom" checked={!useIncludedColour} />
+                        Custom
+                    </>
+                )}
                 <input 
                     id={id}
                     className="css-value-input"
                     type="text" 
                     data-theme={theme}
-                    value={cssValue ?? ''}
+                    value={useIncludedColour ? '' : cssValue ?? ''}
                 />
             </div>                
         </>
