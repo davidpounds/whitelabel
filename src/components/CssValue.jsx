@@ -23,6 +23,7 @@ const CssValue = props => {
         id,
         theme,
         cssValue,
+        property,
         updateHandler,
     };
 
@@ -49,7 +50,7 @@ const CssValue = props => {
 export default CssValue;
 
 const ColourValue = props => {
-    const { id, theme, cssValue, updateHandler, includeColours = [] } = props;
+    const { id, theme, cssValue, updateHandler, property, includeColours = [] } = props;
     const cssCustomProperties = useSelector(getWhiteLabelCssCustomProperties);
     const getCssValueDetails = cssPropertyName => cssCustomProperties.find(ccp => ccp.property === cssPropertyName) ?? null;
 
@@ -83,7 +84,9 @@ const ColourValue = props => {
                     data-theme={theme}
                     value={useIncludedColour ? '' : cssValue ?? ''}
                     onChange={updateHandler}
+                    size={9}
                 />
+                {!useIncludedColour && <span className="css-value-colour-swatch" style={{backgroundColor: `var(${property})`}}></span>}
             </div>                
         </>
     );

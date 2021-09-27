@@ -22,8 +22,10 @@ const reducer = (state = initialState, action = null) => {
                 ...itemToUpdate,
                 ...(theme === THEME.GLOBAL) && { value },
                 ...(theme !== THEME.GLOBAL) && {
-                    ...itemToUpdate.value,
-                    [theme]: value,
+                    value: {
+                        ...itemToUpdate.value,
+                        [theme]: value,
+                    }
                 }
             };
             return {
