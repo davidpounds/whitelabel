@@ -1,5 +1,5 @@
 import './CssValue.css';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { getWhiteLabelCssCustomProperties } from '../selectors';
 import { CSS_VALUE_TYPE, THEME, makeUpperCaseFirstLetter } from '../utils';
 
@@ -12,6 +12,7 @@ const CssValue = props => {
         property,
         includeColours = [],
     } = props;
+    const dispatch = useDispatch();
     const id = `id${property}-${theme}`;
     const labelText = themed ? 
         `${theme} theme` : 

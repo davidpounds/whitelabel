@@ -4,15 +4,16 @@ import { ACTION } from '../actions';
 const initialState = {};
 
 const reducer = (state = initialState, action = null) => {
-    switch (action.type) {
+    const { type, data } = action;
+    switch (type) {
         case ACTION.LOAD_STORE:
             return {
-                ...action.data,
+                ...data,
             };
         case ACTION.UPDATE_VALUE:
+            const { property, value } = data;
             return {
                 ...state,
-                user: action.user
             };
         default:
             return state;
