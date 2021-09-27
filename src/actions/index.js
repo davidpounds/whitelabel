@@ -8,9 +8,10 @@ export const loadStore = data => ({
     data,
 });
 
-export const updateValue = (property, value) => ({
+export const updateValue = (theme, property, value) => ({
     type: ACTION.UPDATE_VALUE,
     data: {
+        theme,
         property,
         value,
     },

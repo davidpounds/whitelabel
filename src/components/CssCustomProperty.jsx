@@ -1,6 +1,6 @@
 import './CssCustomProperty.css';
 import CssValue from './CssValue';
-import { THEME } from '../utils';
+import { isThemed, getThemedValues } from '../utils';
 
 const CssCustomProperty = props => {
     const { cssCustomProperty } = props;
@@ -11,9 +11,9 @@ const CssCustomProperty = props => {
         includeColours = [],
         value,
     } = cssCustomProperty;
-    const themed = value?.constructor !== String && Object.keys(value).every(k => [THEME.LIGHT, THEME.DARK].includes(k));
 
-    const values = themed ? Object.entries(value).sort((a, b) => a.theme > b.theme ? 1 : -1) : [[THEME.GLOBAL, value]];
+    const themed = isThemed(value);
+    const values = getThemedValues(value);
 
     return (
         <fieldset className="css-custom-property">
