@@ -82,9 +82,10 @@ const ColourValue = props => {
                     className="css-value-input"
                     type="text" 
                     data-theme={theme}
-                    value={useIncludedColour ? '' : cssValue ?? ''}
+                    value={useIncludedColour ? getCssValueDetails(cssValue)?.value?.[theme] ?? '' : cssValue ?? ''}
                     onChange={updateHandler}
                     size={9}
+                    disabled={useIncludedColour}
                 />
                 {!useIncludedColour && <span className="css-value-colour-swatch" style={{backgroundColor: `var(${property})`}}></span>}
             </div>                
