@@ -1,12 +1,19 @@
 .not-themed {
     grid-column: 2 / span 2;
 }
+.css-value {
+    padding: var(--grid-padding, 0);
+    background: #ffc;
+}
 .css-value-label {
     display: block;
 }
 .css-value-colour-swatch {
+    --swatch-size: 1.6rem;
     display: inline-block;
-    width: 1.2rem;
-    height: 1.2rem;
+    width: var(--swatch-size);
+    height: var(--swatch-size);
+    border-radius: calc(var(--swatch-size) / 2);
     border: 1px solid #444;
+    margin-left: 0.5rem;
 }
