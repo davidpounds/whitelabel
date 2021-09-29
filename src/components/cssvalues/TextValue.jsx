@@ -1,3 +1,5 @@
+import './TextValue.css';
+
 const TextValue = props => {
     const { id, theme, cssValue, updateHandler } = props;
 

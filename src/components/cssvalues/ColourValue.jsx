@@ -24,8 +24,16 @@ const ColourValue = props => {
                 const optName = getCssValueDetails(col)?.propertyName ?? col;
                 return (
                     <div key={col} className="css-value-colour">
-                        <input type="radio" name={`col-${id}`} value={col} checked={col === cssValue} onChange={updateHandler} />
-                        {optName}
+                        <input 
+                            className="css-value-colour-radio"
+                            type="radio" 
+                            id={`radio${id}-${col}`}
+                            name={`col-${id}`} 
+                            value={col} 
+                            checked={col === cssValue} 
+                            onChange={updateHandler} 
+                        />
+                        <label htmlFor={`radio${id}-${col}`} className="css-value-colour-label">{optName}</label>
                         <span className="css-value-colour-swatch" style={{backgroundColor: `var(${col})`}}></span>
                     </div>
                 );
@@ -34,8 +42,16 @@ const ColourValue = props => {
             <div className="css-value-colour">
                 {showIncludeColours && (
                     <>
-                        <input type="radio" name={`col-${id}`} value={customColourValue} checked={!useIncludedColour} onChange={updateHandler} />
-                        Custom
+                        <input 
+                            className="css-value-colour-radio"
+                            type="radio" 
+                            id={`radio${id}-custom`}
+                            name={`col-${id}`} 
+                            value={customColourValue} 
+                            checked={!useIncludedColour} 
+                            onChange={updateHandler} 
+                        />
+                        <label htmlFor={`radio${id}-custom`} className="css-value-colour-label">Custom</label>
                     </>
                 )}
                 <input 

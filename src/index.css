@@ -1,3 +1,7 @@
+:root {
+  --admin-page-background: #fff2e7;
+}
+
 *, *::after, *::before {
   box-sizing: border-box;
 }
@@ -9,4 +13,5 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--admin-page-background);
 }

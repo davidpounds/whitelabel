@@ -1,0 +1,23 @@
+.css-value-image {
+    display: contents;
+}
+.css-value-image-preview {
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    height: 10rem;
+    border: 1px solid #444;
+}
+.css-value-image-label {
+    border: 1px solid #444;
+    background: #eee;
+    border-radius: 0.2rem;
+    padding: 0.4rem;
+    width: auto;
+    align-self: flex-start;
+}
+.css-value-image-input {
+    position: absolute;
+    left: -9999rem;
+}

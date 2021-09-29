@@ -7,7 +7,7 @@
     grid-column: 1 / -1;
     font-weight: 200;
     margin: 1rem 0 0.2rem 0;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #999;
 }
 @media screen and (max-width: 50rem) {
     .section {
