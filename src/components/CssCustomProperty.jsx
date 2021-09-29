@@ -17,7 +17,10 @@ const CssCustomProperty = props => {
 
     return (
         <fieldset className="css-custom-property">
-            <legend className="css-custom-property-heading">{propertyName}</legend>
+            <legend className="css-custom-property-heading">
+                {propertyName}
+                <span className="css-custom-property-var">{property}</span>
+            </legend>
             {values.map(([theme, cssValue]) => (
                 <CssValue
                     key={theme}

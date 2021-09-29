@@ -6,3 +6,9 @@
     font-size: 1.2rem;
     padding: var(--grid-padding, 0);
 }
+.css-custom-property-var {
+    display: block;
+    color: #999;
+    font-size: 0.8rem;
+    margin: 0.2rem 0 0 0;
+}
