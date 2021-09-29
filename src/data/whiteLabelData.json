@@ -3,12 +3,12 @@
     "name": "White label name",
     "sections": [
         {
-            "sectionId": "logo",
-            "sectionName": "Logo"
+            "sectionId": "colours",
+            "sectionName": "Brand colours"
         },
         {
-            "sectionId": "colours",
-            "sectionName": "Colours"
+            "sectionId": "header",
+            "sectionName": "Page header"
         },
         {
             "sectionId": "text",
@@ -20,16 +20,6 @@
         }
     ],
     "cssCustomProperties": [
-        {
-            "sectionId": "logo",
-            "type": "image",
-            "propertyName": "Page header logo",
-            "property": "--page-header-logo",
-            "value": {
-                "light": null,
-                "dark": null
-            }
-        },
         {
             "sectionId": "colours",
             "type": "colour",
@@ -61,7 +51,7 @@
             }
         },
         {
-            "sectionId": "colours",
+            "sectionId": "header",
             "type": "colour",
             "propertyName": "Page header colour",
             "property": "--page-header-colour",
@@ -69,6 +59,38 @@
             "value": {
                 "light": "--primary-brand-colour",
                 "dark": "--primary-brand-colour"
+            }
+        },
+        {
+            "sectionId": "header",
+            "type": "image",
+            "propertyName": "Page header logo",
+            "property": "--page-header-logo",
+            "value": {
+                "light": null,
+                "dark": null
+            }
+        },
+        {
+            "sectionId": "header",
+            "type": "colour",
+            "propertyName": "Header text colour",
+            "property": "--header-text-colour",
+            "includeColours": ["--page-background-colour", "--primary-brand-colour", "--secondary-brand-colour"],
+            "value": {
+                "light": "--page-background-colour",
+                "dark": "--page-background-colour"
+            }
+        },
+        {
+            "sectionId": "header",
+            "type": "colour",
+            "propertyName": "Header link text colour",
+            "property": "--header-link-colour",
+            "includeColours": ["--page-background-colour", "--primary-brand-colour", "--secondary-brand-colour"],
+            "value": {
+                "light": "--page-background-colour",
+                "dark": "--page-background-colour"
             }
         },
         {
@@ -93,11 +115,11 @@
             "sectionId": "text",
             "type": "colour",
             "propertyName": "Link text colour",
-            "property": "--link-text-colour",
+            "property": "--body-link-colour",
             "includeColours": ["--primary-brand-colour", "--secondary-brand-colour"],
             "value": {
-                "light": "#0000cc",
-                "dark": "#ffffcc"
+                "light": "--primary-brand-colour",
+                "dark": "--primary-brand-colour"
             }
         },
         {
