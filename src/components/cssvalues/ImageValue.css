@@ -2,12 +2,19 @@
     display: contents;
 }
 .css-value-image-preview {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
     height: 10rem;
     border: 1px solid #444;
+}
+.css-value-image-preview.blank::before {
+    content: attr(data-blank-message);
+    font-size: 1.5rem;
+    color: #999;
 }
 .css-value-image-label {
     border: 1px solid #444;

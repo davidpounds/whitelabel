@@ -33,7 +33,11 @@ const ImageValue = props => {
                 data-theme={theme}
                 onChange={imageChangeHandler}
             />
-            <span className="css-value-image-preview" style={previewStyles}></span>
+            <span 
+                className={`css-value-image-preview ${cssValue ? '' : 'blank'}`} 
+                style={previewStyles}
+                data-blank-message="Choose an image file"
+            ></span>
         </div>
     );
 };
