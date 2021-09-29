@@ -1,6 +1,11 @@
 .not-themed {
     grid-column: 2 / span 2;
 }
+@media screen and (max-width: 50rem) {
+    .not-themed {
+        grid-column: 1 / -1;
+    }
+}
 .css-value {
     display: flex;
     flex-direction: column;
