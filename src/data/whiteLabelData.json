@@ -61,6 +61,17 @@
             }
         },
         {
+            "sectionId": "colours",
+            "type": "colour",
+            "propertyName": "Page header colour",
+            "property": "--page-header-colour",
+            "includeColours": ["--primary-brand-colour", "--secondary-brand-colour"],
+            "value": {
+                "light": "--primary-brand-colour",
+                "dark": "--primary-brand-colour"
+            }
+        },
+        {
             "sectionId": "text",
             "type": "size",
             "propertyName": "Body text size",

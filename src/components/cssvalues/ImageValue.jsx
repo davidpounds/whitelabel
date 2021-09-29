@@ -20,7 +20,7 @@ const ImageValue = props => {
 
     const previewStyles = {
         backgroundImage: `url("${cssValue}")`,
-        backgroundColor: cssValue ? 'var(--page-background-colour)' : 'transparent',
+        backgroundColor: cssValue ? 'var(--page-header-colour)' : 'transparent',
     };
     
     return (
