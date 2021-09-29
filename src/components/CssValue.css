@@ -11,6 +11,7 @@
 .css-value-label {
     display: block;
     font-size: 1rem;
+    margin: 0 0 0.2rem 0;
 }
 .css-value-input {
     border: none;

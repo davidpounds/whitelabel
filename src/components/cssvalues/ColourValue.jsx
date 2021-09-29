@@ -18,6 +18,8 @@ const ColourValue = props => {
         // eslint-disable-next-line
     }, [useIncludedColour, cssValue, theme]);
 
+    const showCustomColour = !showIncludeColours || !useIncludedColour;
+
     return (
         <>
             {showIncludeColours && includeColours.map(col => {
@@ -54,17 +56,21 @@ const ColourValue = props => {
                         <label htmlFor={`radio${id}-custom`} className="css-value-colour-label">Custom</label>
                     </>
                 )}
-                <input 
-                    id={id}
-                    className="css-value-input"
-                    type="text" 
-                    data-theme={theme}
-                    value={customColourValue}
-                    onChange={updateHandler}
-                    size={9}
-                    disabled={useIncludedColour}
-                />
-                <span className="css-value-colour-swatch" style={{backgroundColor: `var(${property})`}}></span>
+                {showCustomColour && (
+                    <>
+                        <input 
+                            id={id}
+                            className="css-value-input"
+                            type="text" 
+                            data-theme={theme}
+                            value={customColourValue}
+                            onChange={updateHandler}
+                            size={9}
+                            disabled={useIncludedColour}
+                        />
+                        <span className="css-value-colour-swatch" style={{backgroundColor: `var(${property})`}}></span>
+                    </> 
+                )}
             </div>                
         </>
     );
