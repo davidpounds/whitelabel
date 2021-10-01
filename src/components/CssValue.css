@@ -1,8 +1,16 @@
-.not-themed {
+.css-custom-property .light {
+    grid-column: 2 / 3;
+}
+.css-custom-property .dark {
+    grid-column: 3 / 4;
+}
+.css-custom-property .not-themed {
     grid-column: 2 / span 2;
 }
 @media screen and (max-width: 50rem) {
-    .not-themed {
+    .css-custom-property .light,
+    .css-custom-property .dark,
+    .css-custom-property .not-themed {
         grid-column: 1 / -1;
     }
 }
