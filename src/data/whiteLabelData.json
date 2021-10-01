@@ -23,8 +23,8 @@
         {
             "sectionId": "colours",
             "type": "colour",
-            "propertyName": "Page background colour",
-            "property": "--page-background-colour",
+            "propertyName": "Site background colour",
+            "property": "--site-background-colour",
             "value": {
                 "light": "#ffffff",
                 "dark": "#444444"
@@ -76,10 +76,10 @@
             "type": "colour",
             "propertyName": "Header text colour",
             "property": "--header-text-colour",
-            "includeColours": ["--page-background-colour", "--primary-brand-colour", "--secondary-brand-colour"],
+            "includeColours": ["--site-background-colour", "--primary-brand-colour", "--secondary-brand-colour"],
             "value": {
-                "light": "--page-background-colour",
-                "dark": "--page-background-colour"
+                "light": "--site-background-colour",
+                "dark": "--site-background-colour"
             }
         },
         {
@@ -87,10 +87,10 @@
             "type": "colour",
             "propertyName": "Header link text colour",
             "property": "--header-link-colour",
-            "includeColours": ["--page-background-colour", "--primary-brand-colour", "--secondary-brand-colour"],
+            "includeColours": ["--site-background-colour", "--primary-brand-colour", "--secondary-brand-colour"],
             "value": {
-                "light": "--page-background-colour",
-                "dark": "--page-background-colour"
+                "light": "--site-background-colour",
+                "dark": "--site-background-colour"
             }
         },
         {

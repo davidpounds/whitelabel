@@ -6,6 +6,7 @@
 }
 .css-value-colour-radio {
     margin-right: 0.5rem;
+    accent-color: var(--primary-brand-colour);
 }
 .css-value-colour-label {
     flex: 1 1 auto;
