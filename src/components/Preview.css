@@ -1,5 +1,6 @@
 .preview {
-    padding: 2rem;
+    --button-radius: 5px;
+    padding: 1rem 2rem;
     background-color: var(--site-background-colour);
     color: var(--body-text-colour);
     font-size: var(--body-text-size);
@@ -11,21 +12,36 @@
 .preview-heading {
     font-size: 1.6rem;
     font-weight: 200;
+    margin: 0 0 2rem 0;
 }
-.preview header {
-    padding: 1rem;
+.preview .page-heading {
+    padding: 1.4rem 1rem 1rem 1rem;
     background-color: var(--page-header-colour);
     color: var(--page-header-text-colour);
 }
 .preview .preview-header-logo {
     width: var(--page-header-logo-width);
     height: var(--page-header-logo-height);
+    background-color: #eee;
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.4) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.4) 75%, rgba(0, 0, 0, 0.4)), linear-gradient(45deg, rgba(0, 0, 0, 0.4) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.4) 75%, rgba(0, 0, 0, 0.4));
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+}
+.preview .preview-header-logo.filled {
     background-image: var(--page-header-logo);
     background-repeat: no-repeat;
     background-size: var(--page-header-logo-width) var(--page-header-logo-height);
 }
-.preview header a {
+.preview .page-heading a {
     color: var(--page-header-link-colour);
+}
+.preview .typography h1,
+.preview .typography h2,
+.preview .typography h3,
+.preview .typography h4,
+.preview .typography p {
+    margin: 0.5rem 1rem 0.5rem 0;
+    display: inline-block;
 }
 .preview h1 {
     color: var(--heading1-colour);
@@ -44,7 +60,6 @@
     font-size: var(--heading4-size);
 }
 .preview .button {
-    --button-radius: 5px;
     border-radius: var(--button-radius);
     padding: 0.5rem 1rem;
     font-size: var(--body-text-size);
@@ -53,6 +68,7 @@
 .preview .button-primary {
     color: var(--btn-primary-text-colour);
     background-color: var(--btn-primary-background-colour);
+    margin-right: 2rem;
 }
 .preview .button-secondary {
     color: var(--btn-secondary-text-colour);
@@ -75,4 +91,21 @@
 .preview .button-option.active {
     color: var(--btn-option-active-text-colour);
     background-color: var(--btn-option-active-background-colour);
+}
+.preview [data-section] {
+    position: relative;
+}
+.preview [data-section]::before {
+    --padding: 3px;
+    --font-size: 0.8rem;
+    position: absolute;
+    top: calc(var(--padding) * -2 - var(--font-size));
+    left: 0.5rem;
+    font-size: var(--font-size);
+    line-height: var(--font-size);
+    color: #555;
+    background-color: #ccc;
+    content: attr(data-section);
+    border-radius: var(--padding) var(--padding) 0 0;
+    padding: var(--padding);
 }

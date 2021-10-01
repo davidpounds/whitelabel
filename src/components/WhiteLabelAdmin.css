@@ -5,7 +5,17 @@
     font-weight: 200;
 }
 .preview-wrapper {
+    background-color: var(--admin-page-background);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
     display: grid;
     grid-template-columns: 50% 50%;
     gap: 1rem;
+}
+@media screen and (max-width: 50rem) {
+    .preview-wrapper {
+        position: static;
+        grid-template-columns: 100%;
+    }        
 }
