@@ -13,6 +13,30 @@
     grid-template-columns: 50% 50%;
     gap: 1rem;
 }
+.preview-wrapper > .preview-heading {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 0.1rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid #444;
+}
+
+.btn-toggle {    
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    font-size: 2rem;
+    color: #444;
+}
+.btn-toggle.show::before {
+    content: "⏶";
+}
+.btn-toggle.hide::before {
+    content: "⏷";
+}
+
 @media screen and (max-width: 50rem) {
     .preview-wrapper {
         position: static;

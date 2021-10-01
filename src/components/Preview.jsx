@@ -6,7 +6,7 @@ const Preview = props => {
 
     return (
         <div className={`preview ${theme}`}>
-            <div className="preview-heading">Preview - {theme} theme</div>
+            <div className="preview-heading">{theme} theme</div>
             <header className="page-heading" data-section="Page header">
                 <div className="preview-header-logo" title="Logo preview" data-section="Logo" />
                 <p>Header text with a <a href="#top" onClick={doNothing}>link</a>.</p>

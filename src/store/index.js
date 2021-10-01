@@ -3,14 +3,12 @@ import { ACTION } from '../actions';
 import { THEME } from '../utils';
 
 const initialState = {
-    editor: {
-        properties: [],
-    }
+    showPreview: true,
 };
 
 const reducer = (state = initialState, action = null) => {
     const { type = null, data = {} } = (action ?? {});
-    const { property = null, properties = [], theme = null, value = null } = data;
+    const { property = null, showPreview = true, theme = null, value = null } = data;
     switch (type) {
         case ACTION.LOAD_STORE:
             return {
@@ -41,12 +39,10 @@ const reducer = (state = initialState, action = null) => {
                     ...itemsAfter,
                 ]
             };
-        case ACTION.SHOW_EDITOR:
+        case ACTION.SHOW_PREVIEW:
             return {
                 ...state,
-                editor: {
-                    properties,
-                }
+                showPreview,
             };
         default:
             return state;

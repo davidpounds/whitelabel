@@ -1,5 +1,6 @@
 import { getThemedValues, THEME, CSS_VALUE_TYPE } from '../utils';
 
+export const getShowPreview = state => state?.showPreview ?? true;
 export const getWhiteLabelName = state => state?.name ?? null;
 export const getWhiteLabelSections = state => state?.sections ?? [];
 export const getWhiteLabelCssCustomProperties = state => state?.cssCustomProperties ?? [];
