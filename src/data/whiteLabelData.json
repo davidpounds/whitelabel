@@ -73,9 +73,23 @@
         },
         {
             "sectionId": "header",
+            "type": "size",
+            "propertyName": "Page header logo width",
+            "property": "--page-header-logo-width",
+            "value": "190px"
+        },
+        {
+            "sectionId": "header",
+            "type": "size",
+            "propertyName": "Page header logo height",
+            "property": "--page-header-logo-height",
+            "value": "50px"
+        },
+        {
+            "sectionId": "header",
             "type": "colour",
-            "propertyName": "Header text colour",
-            "property": "--header-text-colour",
+            "propertyName": "Page header text colour",
+            "property": "--page-header-text-colour",
             "includeColours": ["--site-background-colour", "--primary-brand-colour", "--secondary-brand-colour"],
             "value": {
                 "light": "--site-background-colour",
@@ -85,8 +99,8 @@
         {
             "sectionId": "header",
             "type": "colour",
-            "propertyName": "Header link text colour",
-            "property": "--header-link-colour",
+            "propertyName": "Page header link text colour",
+            "property": "--page-header-link-colour",
             "includeColours": ["--site-background-colour", "--primary-brand-colour", "--secondary-brand-colour"],
             "value": {
                 "light": "--site-background-colour",
@@ -210,7 +224,7 @@
             "type": "colour",
             "propertyName": "Primary button text colour",
             "property": "--btn-primary-text-colour",
-            "includeColours": ["--body-text-colour", "--primary-brand-colour", "--secondary-brand-colour"],
+            "includeColours": ["--site-background-colour", "--body-text-colour", "--primary-brand-colour", "--secondary-brand-colour"],
             "value": {
                 "light": "--body-text-colour",
                 "dark": "--body-text-colour"
@@ -232,7 +246,7 @@
             "type": "colour",
             "propertyName": "Secondary button text colour",
             "property": "--btn-secondary-text-colour",
-            "includeColours": ["--body-text-colour", "--primary-brand-colour", "--secondary-brand-colour"],
+            "includeColours": ["--site-background-colour", "--body-text-colour", "--primary-brand-colour", "--secondary-brand-colour"],
             "value": {
                 "light": "--body-text-colour",
                 "dark": "--body-text-colour"
@@ -254,7 +268,7 @@
             "type": "colour",
             "propertyName": "Option button text colour (active)",
             "property": "--btn-option-active-text-colour",
-            "includeColours": ["--body-text-colour", "--primary-brand-colour", "--secondary-brand-colour"],
+            "includeColours": ["--site-background-colour", "--body-text-colour", "--primary-brand-colour", "--secondary-brand-colour"],
             "value": {
                 "light": "--body-text-colour",
                 "dark": "--body-text-colour"
@@ -276,7 +290,7 @@
             "type": "colour",
             "propertyName": "Option button text colour (inactive)",
             "property": "--btn-option-inactive-text-colour",
-            "includeColours": ["--body-text-colour", "--primary-brand-colour", "--secondary-brand-colour"],
+            "includeColours": ["--site-background-colour", "--body-text-colour", "--primary-brand-colour", "--secondary-brand-colour"],
             "value": {
                 "light": "--body-text-colour",
                 "dark": "--body-text-colour"

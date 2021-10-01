@@ -4,3 +4,8 @@
 .whitelabel-admin-heading {
     font-weight: 200;
 }
+.preview-wrapper {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 1rem;
+}

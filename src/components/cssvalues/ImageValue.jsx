@@ -13,13 +13,16 @@ const ImageValue = props => {
     
     const imageChangeHandler = async e => {
         const file = e?.target?.files?.[0] ?? null;
-        if (!file) return;
+        if (!file) {
+            updateHandler({ target: { value: null }});
+            return;
+        }
         const url = await asyncLoadFile(file);
-        updateHandler({ target: { value: url }});
+        updateHandler({ target: { value: `url(${url})` }});
     };
 
     const previewStyles = {
-        backgroundImage: `url("${cssValue}")`,
+        backgroundImage: cssValue,
         backgroundColor: cssValue ? 'var(--page-header-colour)' : 'transparent',
     };
     

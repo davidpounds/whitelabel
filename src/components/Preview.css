@@ -1,0 +1,78 @@
+.preview {
+    padding: 2rem;
+    background-color: var(--site-background-colour);
+    color: var(--body-text-colour);
+    font-size: var(--body-text-size);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+.preview a {
+    color: var(--body-link-colour);
+}
+.preview-heading {
+    font-size: 1.6rem;
+    font-weight: 200;
+}
+.preview header {
+    padding: 1rem;
+    background-color: var(--page-header-colour);
+    color: var(--page-header-text-colour);
+}
+.preview .preview-header-logo {
+    width: var(--page-header-logo-width);
+    height: var(--page-header-logo-height);
+    background-image: var(--page-header-logo);
+    background-repeat: no-repeat;
+    background-size: var(--page-header-logo-width) var(--page-header-logo-height);
+}
+.preview header a {
+    color: var(--page-header-link-colour);
+}
+.preview h1 {
+    color: var(--heading1-colour);
+    font-size: var(--heading1-size);
+}
+.preview h2 {
+    color: var(--heading2-colour);
+    font-size: var(--heading2-size);
+}
+.preview h3 {
+    color: var(--heading3-colour);
+    font-size: var(--heading3-size);
+}
+.preview h4 {
+    color: var(--heading4-colour);
+    font-size: var(--heading4-size);
+}
+.preview .button {
+    --button-radius: 5px;
+    border-radius: var(--button-radius);
+    padding: 0.5rem 1rem;
+    font-size: var(--body-text-size);
+    border: 1px solid;
+}
+.preview .button-primary {
+    color: var(--btn-primary-text-colour);
+    background-color: var(--btn-primary-background-colour);
+}
+.preview .button-secondary {
+    color: var(--btn-secondary-text-colour);
+    background-color: var(--btn-secondary-background-colour);
+}
+.preview .button-option {
+    border-radius: 0;
+    color: var(--btn-option-inactive-text-colour);
+    background-color: var(--btn-option-inactive-background-colour);
+}
+.preview .button-option:first-of-type {
+    border-radius: var(--button-radius) 0  0 var(--button-radius);
+}
+.preview .button-option:last-of-type {
+    border-radius: 0 var(--button-radius) var(--button-radius) 0;
+}
+.preview .button-option + .button-option {
+    border-left: 0;
+}
+.preview .button-option.active {
+    color: var(--btn-option-active-text-colour);
+    background-color: var(--btn-option-active-background-colour);
+}

@@ -17,10 +17,11 @@
     color: #999;
 }
 .css-value-image-label {
-    border: 1px solid #444;
+    --button-radius: 5px;
+    border-radius: var(--button-radius);
+    border: 1px solid;
     background: #eee;
-    border-radius: 0.2rem;
-    padding: 0.4rem;
+    padding: 0.5rem 1rem;
     width: auto;
     align-self: flex-start;
 }
