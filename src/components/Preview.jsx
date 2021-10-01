@@ -1,4 +1,5 @@
 import './Preview.css';
+import EditWrapper, { DISPLAY_MODE } from './EditWrapper';
 
 const Preview = props => {
     const { theme } = props;
@@ -7,22 +8,161 @@ const Preview = props => {
     return (
         <div className={`preview ${theme}`}>
             <div className="preview-heading">Preview - {theme} theme</div>
-            <header>
-                <div className="preview-header-logo" title="Logo preview" />
-                <p>Header text with a <a href="#top" onClick={doNothing}>link</a>.</p>
-            </header>
-            <h1>Heading 1</h1>
-            <h2>Heading 2</h2>
-            <h3>Heading 3</h3>
-            <h4>Heading 4</h4>
-            <p>Body text with a <a href="#top" onClick={doNothing}>link</a>.</p>
-            <p><button className="button button-primary">Primary button</button></p>
-            <p><button className="button button-secondary">Secondary button</button></p>
-            <p>
-                <button className="button button-option active">Option (active)</button>
-                <button className="button button-option">Option (inactive)</button>
-                <button className="button button-option">Option (inactive)</button>
-            </p>
+            <EditWrapper 
+                theme={theme}
+                properties={[
+                    "--site-background-colour", 
+                    "--primary-brand-colour", 
+                    "--secondary-brand-colour"
+                ]}
+            >
+                <EditWrapper 
+                    theme={theme}
+                    properties={[
+                        "--page-header-colour"
+                    ]}
+                >
+                    <header>
+                        <EditWrapper 
+                            theme={theme} 
+                            properties={[
+                                "--page-header-logo", 
+                                "--page-header-logo-width", 
+                                "--page-header-logo-height"
+                            ]
+                        }>
+                            <div className="preview-header-logo" title="Logo preview" />
+                        </EditWrapper>
+                        <EditWrapper 
+                            theme={theme}
+                            properties={["--page-header-text-colour"]}
+                        >
+                            <p>
+                                Header text with a<> </> 
+                                <EditWrapper
+                                    theme={theme}
+                                    display={DISPLAY_MODE.INLINE} 
+                                    properties={["--page-header-link-colour"]}
+                                >
+                                    <a href="#top" onClick={doNothing}>link</a>
+                                </EditWrapper>
+                                .
+                            </p>
+                        </EditWrapper>
+                    </header>
+                </EditWrapper>
+                <EditWrapper
+                    theme={theme}
+                    properties={[
+                        "--heading1-size",
+                        "--heading1-colour"
+                    ]}
+                >
+                    <h1>Heading 1</h1>
+                </EditWrapper>
+                <EditWrapper
+                    theme={theme}
+                    properties={[
+                        "--heading2-size",
+                        "--heading2-colour"
+                    ]}
+                >
+                    <h2>Heading 2</h2>
+                </EditWrapper>
+                <EditWrapper
+                    theme={theme}
+                    properties={[
+                        "--heading3-size",
+                        "--heading3-colour"
+                    ]}
+                >
+                    <h3>Heading 3</h3>
+                </EditWrapper>
+                <EditWrapper
+                    theme={theme}
+                    properties={[
+                        "--heading4-size",
+                        "--heading4-colour"
+                    ]}
+                >
+                    <h4>Heading 4</h4>
+                </EditWrapper>
+                <EditWrapper
+                    theme={theme}
+                    properties={[
+                        "--body-text-size",
+                        "--body-text-colour"                    
+                    ]}
+                >
+                    <p>
+                        Body text with a<> </>
+                        <EditWrapper
+                            theme={theme}
+                            display={DISPLAY_MODE.INLINE} 
+                            properties={["--body-link-colour"]}
+                        >
+                            <a href="#top" onClick={doNothing}>link</a>
+                        </EditWrapper>
+                        .
+                    </p>
+                </EditWrapper>
+                <p>
+                    <EditWrapper 
+                        theme={theme}
+                        display={DISPLAY_MODE.INLINE}
+                        properties={[
+                            "--btn-primary-background-colour",
+                            "--btn-primary-text-colour"
+                        ]}
+                    >
+                        <button className="button button-primary">Primary button</button>
+                    </EditWrapper>
+                </p>
+                <p>
+                    <EditWrapper 
+                        theme={theme}
+                        display={DISPLAY_MODE.INLINE}
+                        properties={[
+                            "--btn-secondary-background-colour",
+                            "--btn-secondary-text-colour"
+                        ]}
+                    >
+                        <button className="button button-secondary">Secondary button</button>
+                    </EditWrapper>
+                </p>
+                <p>
+                    <EditWrapper 
+                        theme={theme}
+                        display={DISPLAY_MODE.INLINE}
+                        properties={[
+                            "--btn-option-active-background-colour",
+                            "--btn-option-active-text-colour"
+                        ]}
+                    >
+                        <button className="button button-option active">Option (active)</button>
+                    </EditWrapper>
+                    <EditWrapper 
+                        theme={theme}
+                        display={DISPLAY_MODE.INLINE}
+                        properties={[
+                            "--btn-option-inactive-background-colour",
+                            "--btn-option-inactive-text-colour"                            
+                        ]}
+                    >
+                        <button className="button button-option">Option (inactive)</button>
+                    </EditWrapper>
+                    <EditWrapper 
+                        theme={theme}
+                        display={DISPLAY_MODE.INLINE}
+                        properties={[
+                            "--btn-option-inactive-background-colour",
+                            "--btn-option-inactive-text-colour"                            
+                        ]}
+                    >
+                        <button className="button button-option">Option (inactive)</button>
+                    </EditWrapper>
+                </p>
+            </EditWrapper>
         </div>
     );
 };
