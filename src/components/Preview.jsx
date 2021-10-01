@@ -9,7 +9,6 @@ const Preview = props => {
         <div className={`preview ${theme}`}>
             <div className="preview-heading">Preview - {theme} theme</div>
             <EditWrapper 
-                theme={theme}
                 properties={[
                     "--site-background-colour", 
                     "--primary-brand-colour", 
@@ -17,7 +16,6 @@ const Preview = props => {
                 ]}
             >
                 <EditWrapper 
-                    theme={theme}
                     properties={[
                         "--page-header-colour"
                     ]}
@@ -34,13 +32,11 @@ const Preview = props => {
                             <div className="preview-header-logo" title="Logo preview" />
                         </EditWrapper>
                         <EditWrapper 
-                            theme={theme}
                             properties={["--page-header-text-colour"]}
                         >
                             <p>
                                 Header text with a<> </> 
                                 <EditWrapper
-                                    theme={theme}
                                     display={DISPLAY_MODE.INLINE} 
                                     properties={["--page-header-link-colour"]}
                                 >
@@ -52,7 +48,6 @@ const Preview = props => {
                     </header>
                 </EditWrapper>
                 <EditWrapper
-                    theme={theme}
                     properties={[
                         "--heading1-size",
                         "--heading1-colour"
@@ -61,7 +56,6 @@ const Preview = props => {
                     <h1>Heading 1</h1>
                 </EditWrapper>
                 <EditWrapper
-                    theme={theme}
                     properties={[
                         "--heading2-size",
                         "--heading2-colour"
@@ -70,7 +64,6 @@ const Preview = props => {
                     <h2>Heading 2</h2>
                 </EditWrapper>
                 <EditWrapper
-                    theme={theme}
                     properties={[
                         "--heading3-size",
                         "--heading3-colour"
@@ -79,7 +72,6 @@ const Preview = props => {
                     <h3>Heading 3</h3>
                 </EditWrapper>
                 <EditWrapper
-                    theme={theme}
                     properties={[
                         "--heading4-size",
                         "--heading4-colour"
@@ -88,7 +80,6 @@ const Preview = props => {
                     <h4>Heading 4</h4>
                 </EditWrapper>
                 <EditWrapper
-                    theme={theme}
                     properties={[
                         "--body-text-size",
                         "--body-text-colour"                    
@@ -97,7 +88,6 @@ const Preview = props => {
                     <p>
                         Body text with a<> </>
                         <EditWrapper
-                            theme={theme}
                             display={DISPLAY_MODE.INLINE} 
                             properties={["--body-link-colour"]}
                         >
@@ -108,7 +98,6 @@ const Preview = props => {
                 </EditWrapper>
                 <p>
                     <EditWrapper 
-                        theme={theme}
                         display={DISPLAY_MODE.INLINE}
                         properties={[
                             "--btn-primary-background-colour",
@@ -120,7 +109,6 @@ const Preview = props => {
                 </p>
                 <p>
                     <EditWrapper 
-                        theme={theme}
                         display={DISPLAY_MODE.INLINE}
                         properties={[
                             "--btn-secondary-background-colour",
@@ -132,7 +120,6 @@ const Preview = props => {
                 </p>
                 <p>
                     <EditWrapper 
-                        theme={theme}
                         display={DISPLAY_MODE.INLINE}
                         properties={[
                             "--btn-option-active-background-colour",
@@ -142,7 +129,6 @@ const Preview = props => {
                         <button className="button button-option active">Option (active)</button>
                     </EditWrapper>
                     <EditWrapper 
-                        theme={theme}
                         display={DISPLAY_MODE.INLINE}
                         properties={[
                             "--btn-option-inactive-background-colour",
@@ -152,7 +138,6 @@ const Preview = props => {
                         <button className="button button-option">Option (inactive)</button>
                     </EditWrapper>
                     <EditWrapper 
-                        theme={theme}
                         display={DISPLAY_MODE.INLINE}
                         properties={[
                             "--btn-option-inactive-background-colour",

@@ -2,17 +2,22 @@ import { createStore } from 'redux';
 import { ACTION } from '../actions';
 import { THEME } from '../utils';
 
-const initialState = {};
+const initialState = {
+    editor: {
+        properties: [],
+    }
+};
 
 const reducer = (state = initialState, action = null) => {
-    const { type, data } = action;
+    const { type = null, data = {} } = (action ?? {});
+    const { property = null, properties = [], theme = null, value = null } = data;
     switch (type) {
         case ACTION.LOAD_STORE:
             return {
+                ...state,
                 ...data,
             };
         case ACTION.UPDATE_VALUE:
-            const { property, theme, value } = data;
             const itemToUpdate = state?.cssCustomProperties?.find?.(item => item.property === property) ?? null;
             if (!itemToUpdate) return state;
             const itemIndex = state.cssCustomProperties.findIndex(item => item === itemToUpdate);
@@ -35,6 +40,13 @@ const reducer = (state = initialState, action = null) => {
                     updatedItem,
                     ...itemsAfter,
                 ]
+            };
+        case ACTION.SHOW_EDITOR:
+            return {
+                ...state,
+                editor: {
+                    properties,
+                }
             };
         default:
             return state;

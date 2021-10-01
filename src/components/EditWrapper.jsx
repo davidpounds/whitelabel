@@ -1,4 +1,6 @@
 import './EditWrapper.css';
+import { useDispatch } from 'react-redux';
+import { showEditor } from '../actions';
 
 export const DISPLAY_MODE = Object.freeze({
     BLOCK: 'block',
@@ -6,12 +8,18 @@ export const DISPLAY_MODE = Object.freeze({
 });
 
 const EditWrapper = props => {
-    const { children, theme, properties = [], display = DISPLAY_MODE.BLOCK } = props;
+    const { 
+        children, 
+        properties = [], 
+        display = DISPLAY_MODE.BLOCK 
+    } = props;
+
+    const dispatch = useDispatch();
+
     const clickHandler = e => {
-        const { target } = e;
         e.preventDefault();
         e.stopPropagation();
-        console.log({target, theme, properties});
+        dispatch(showEditor(properties));
     };
 
     return (
