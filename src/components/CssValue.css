@@ -1,11 +1,11 @@
 .css-custom-property .light {
-    grid-column: 2 / 3;
+    grid-column: 1 / 2;
 }
 .css-custom-property .dark {
-    grid-column: 3 / 4;
+    grid-column: 2 / 3;
 }
 .css-custom-property .not-themed {
-    grid-column: 2 / span 2;
+    grid-column: 1 / span 2;
 }
 @media screen and (max-width: 50rem) {
     .css-custom-property .light,
@@ -17,8 +17,6 @@
 .css-value {
     display: flex;
     flex-direction: column;
-    padding: var(--grid-padding, 0);
-    background: #ffe3cc;
     border-radius: 0.2rem;
 }
 .css-value-label {
@@ -30,7 +28,6 @@
     border: none;
     padding: 0.2rem;
     font-size: 1rem;
-    background-color: var(--admin-page-background);
     accent-color: var(--primary-brand-colour);
 }
 .css-value-input:focus {

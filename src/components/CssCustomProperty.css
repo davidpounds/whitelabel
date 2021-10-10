@@ -4,7 +4,9 @@
 .css-custom-property-heading {
     font-weight: normal;
     font-size: 1.2rem;
-    padding: var(--grid-padding, 0);
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+    background: rgba(0, 0, 0, 0.05);
 }
 .css-custom-property-var {
     display: block;

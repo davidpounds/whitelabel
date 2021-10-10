@@ -36,7 +36,12 @@ const ColourValue = props => {
                             onChange={updateHandler} 
                         />
                         <label htmlFor={`radio${id}-${col}`} className="css-value-colour-label">{optName}</label>
-                        <span className="css-value-colour-swatch" style={{backgroundColor: `var(${col})`}}></span>
+                        {/* <br />
+                        <ColourItem 
+                            customColourValue={getCssValue(col)}
+                            property={col}
+                            disabled={true}
+                        /> */}
                     </div>
                 );
             })}
@@ -54,26 +59,49 @@ const ColourValue = props => {
                             onChange={updateHandler} 
                         />
                         <label htmlFor={`radio${id}-custom`} className="css-value-colour-label">Custom</label>
+                        <br />
                     </>
                 )}
                 {showCustomColour && (
-                    <>
-                        <input 
-                            id={id}
-                            className="css-value-input"
-                            type="text" 
-                            data-theme={theme}
-                            value={customColourValue}
-                            onChange={updateHandler}
-                            size={9}
-                            disabled={useIncludedColour}
-                        />
-                        <span className="css-value-colour-swatch" style={{backgroundColor: `var(${property})`}}></span>
-                    </> 
+                    <ColourItem 
+                        id={id}
+                        theme={theme}
+                        customColourValue={customColourValue}
+                        updateHandler={updateHandler}
+                        property={property}
+                        disabled={useIncludedColour}
+                    />
                 )}
             </div>                
         </>
     );
 };
+
+const ColourItem = props => {
+    const {
+        id,
+        theme,
+        customColourValue,
+        updateHandler,
+        property,
+        disabled,
+    } = props;
+    return (
+        <span className="colour-item">
+            <input 
+                id={id}
+                className="css-value-input"
+                type="text" 
+                data-theme={theme}
+                value={customColourValue}
+                onChange={updateHandler}
+                size={7}
+                disabled={disabled}
+            />
+            <span className="css-value-colour-swatch" style={{backgroundColor: `var(${property})`}}></span>
+        </span> 
+    );
+};
+
 
 export default ColourValue;

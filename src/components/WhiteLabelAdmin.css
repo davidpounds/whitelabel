@@ -1,14 +1,15 @@
 .whitelabel-admin {
     padding: 2rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 33.3%);
 }
 .whitelabel-admin-heading {
     font-weight: 200;
+    grid-column: 1 / -1;
+    margin: 0;
 }
 .preview-wrapper {
-    background-color: var(--admin-page-background);
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
     display: grid;
     grid-template-columns: 50% 50%;
     gap: 1rem;

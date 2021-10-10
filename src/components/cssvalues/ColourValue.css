@@ -1,25 +1,29 @@
 .css-value-colour {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 1.6rem;
+    --colour-item-height: 2rem;
+}
+.css-value-colour:not(:first-of-type) {
+    margin-top: 0.8rem;
 }
 .css-value-colour-radio {
     margin-right: 0.5rem;
     accent-color: var(--primary-brand-colour);
 }
 .css-value-colour-label {
-    flex: 1 1 auto;
+    padding: 0.2rem;
 }
-.css-value-colour .css-value-input {
-    text-transform: uppercase;
-}
-.css-value-colour-swatch {
-    --swatch-size: 1.2rem;
-    display: inline-block;
-    width: var(--swatch-size);
-    height: var(--swatch-size);
-    border-radius: calc(var(--swatch-size) / 4);
+.colour-item {
+    display: inline-flex;
+    border-radius: 4px;
     border: 1px solid #444;
-    margin-left: 0.5rem;
+    /* overflow: hidden; */
+    min-height: var(--colour-item-height);
+}
+.css-value-colour .colour-item .css-value-input {
+    text-transform: uppercase;
+    padding: 0.2rem;
+    border-right: 1px solid #444;
+}
+.css-value-colour .colour-item .css-value-colour-swatch {
+    width: var(--colour-item-height);
+    flex: 0 0 var(--colour-item-height);
 }

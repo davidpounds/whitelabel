@@ -5,14 +5,25 @@
     color: var(--body-text-colour);
     font-size: var(--body-text-size);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    align-self: start;
 }
 .preview a {
     color: var(--body-link-colour);
 }
-.preview-heading {
-    font-size: 1.6rem;
+.preview-heading,
+.preview-subheading {
     font-weight: 200;
-    margin: 0 0 2rem 0;
+    margin: 1rem 0 0.5rem 0;
+}
+.preview-heading {
+    margin: 0;
+    font-size: 2rem;
+}
+.preview-subheading {
+    font-size: 1.6rem;
+    border-bottom: 1px solid;
 }
 .preview .page-heading {
     padding: 1.4rem 1rem 1rem 1rem;
@@ -23,20 +34,12 @@
     width: var(--page-header-logo-width);
     height: var(--page-header-logo-height);
     background-color: #ccc;
-    background-image: var(--page-header-logo);
+    background-image: var(--page-header-logo, url("data:image/png;base64,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"));
     background-repeat: no-repeat;
     background-size: var(--page-header-logo-width) var(--page-header-logo-height);
 }
 .preview .page-heading a {
     color: var(--page-header-link-colour);
-}
-.preview .typography h1,
-.preview .typography h2,
-.preview .typography h3,
-.preview .typography h4,
-.preview .typography p {
-    margin: 0.5rem 1rem 0.5rem 0;
-    display: inline-block;
 }
 .preview h1 {
     color: var(--heading1-colour);
@@ -86,21 +89,4 @@
 .preview .button-option.active {
     color: var(--btn-option-active-text-colour);
     background-color: var(--btn-option-active-background-colour);
-}
-.preview [data-section] {
-    position: relative;
-}
-.preview [data-section]::before {
-    --padding: 3px;
-    --font-size: 0.8rem;
-    position: absolute;
-    top: calc(var(--padding) * -2 - var(--font-size));
-    left: 0.5rem;
-    font-size: var(--font-size);
-    line-height: var(--font-size);
-    color: #555;
-    background-color: #ccc;
-    content: attr(data-section);
-    border-radius: var(--padding) var(--padding) 0 0;
-    padding: var(--padding);
 }
