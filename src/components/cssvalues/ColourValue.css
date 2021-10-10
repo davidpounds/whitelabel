@@ -11,6 +11,9 @@
 .css-value-colour-label {
     flex: 1 1 auto;
 }
+.css-value-colour .css-value-input {
+    text-transform: uppercase;
+}
 .css-value-colour-swatch {
     --swatch-size: 1.2rem;
     display: inline-block;
