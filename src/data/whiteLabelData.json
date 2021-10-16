@@ -90,7 +90,7 @@
             "type": "colour",
             "propertyName": "Page header text colour",
             "property": "--page-header-text-colour",
-            "includeColours": ["--site-background-colour", "--primary-brand-colour", "--secondary-brand-colour"],
+            "includeColours": ["--site-background-colour", "--body-text-colour", "--primary-brand-colour", "--secondary-brand-colour"],
             "value": {
                 "light": "--site-background-colour",
                 "dark": "--body-text-colour"
@@ -101,7 +101,7 @@
             "type": "colour",
             "propertyName": "Page header link text colour",
             "property": "--page-header-link-colour",
-            "includeColours": ["--site-background-colour", "--primary-brand-colour", "--secondary-brand-colour"],
+            "includeColours": ["--site-background-colour", "--body-text-colour", "--primary-brand-colour", "--secondary-brand-colour"],
             "value": {
                 "light": "--site-background-colour",
                 "dark": "--body-text-colour"
