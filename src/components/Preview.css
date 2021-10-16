@@ -8,6 +8,14 @@
     top: 0;
     align-self: start;
 }
+.preview .icon {
+    --icon-size: 48px;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 0 1rem;
+}
 .preview a {
     color: var(--body-link-colour);
 }

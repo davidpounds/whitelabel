@@ -1,5 +1,7 @@
 import './Preview.css';
-import { makeUpperCaseFirstLetter } from '../utils';
+import { makeUpperCaseFirstLetter, THEME } from '../utils';
+import { ReactComponent as LightThemeIcon } from '../icons/light.svg';
+import { ReactComponent as DarkThemeIcon } from '../icons/dark.svg';
 
 const Preview = props => {
     const { theme } = props;
@@ -8,7 +10,11 @@ const Preview = props => {
 
     return (
         <div className={`preview ${theme}`}>
-            <div className="preview-heading">{displayThemeName} theme</div>
+            <div className="preview-heading">
+                {displayThemeName} theme
+                {theme === THEME.LIGHT && <LightThemeIcon className="icon" />}
+                {theme === THEME.DARK && <DarkThemeIcon className="icon" />}
+            </div>
 
             <div className="preview-subheading">Brand colours</div>
             <p>Primary brand colour: <span className="colour-swatch primary" /></p>
