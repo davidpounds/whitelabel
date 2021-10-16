@@ -5,6 +5,9 @@ import { CSS_VALUE_TYPE, THEME, makeUpperCaseFirstLetter } from '../utils';
 import ColourValue from './cssvalues/ColourValue';
 import ImageValue from './cssvalues/ImageValue';
 import TextValue from './cssvalues/TextValue';
+import { ReactComponent as LightThemeIcon } from '../icons/light.svg';
+import { ReactComponent as DarkThemeIcon } from '../icons/dark.svg';
+import { ReactComponent as BothThemeIcon } from '../icons/both.svg';
 
 const CssValue = props => {
     const { 
@@ -17,9 +20,11 @@ const CssValue = props => {
     } = props;
     const dispatch = useDispatch();
     const id = `id${property}-${theme}`;
-    const labelText = themed ? 
-        `${theme} theme` : 
-        `${THEME.LIGHT} and ${THEME.DARK} themes`;
+    const labelText = makeUpperCaseFirstLetter(
+        themed ? 
+            `${theme} theme` : 
+            `${THEME.LIGHT} and ${THEME.DARK} themes`
+    );
     const updateHandler = e => dispatch(updateValue(theme, property, e.target.value));
     
     const valueProps = {
@@ -44,7 +49,12 @@ const CssValue = props => {
 
     return (
         <div className={`css-value ${theme} ${themed ? '' : 'not-themed'}`}>
-            <label htmlFor={id} className="css-value-label">{makeUpperCaseFirstLetter(labelText)}</label>
+            <label htmlFor={id} className="css-value-label">
+                <span className="text">{labelText}</span>
+                {themed && theme === THEME.LIGHT && <LightThemeIcon className="icon" title={labelText} />} 
+                {themed && theme === THEME.DARK && <DarkThemeIcon className="icon" title={labelText} />} 
+                {!themed && <BothThemeIcon className="icon" title={labelText} />} 
+            </label>
             {control}
         </div>
     );

@@ -21,59 +21,29 @@ const ColourValue = props => {
     const showCustomColour = !showIncludeColours || !useIncludedColour;
 
     return (
-        <>
-            {showIncludeColours && includeColours.map(col => {
-                const optName = getCssValueDetails(col)?.propertyName ?? col;
-                return (
-                    <div key={col} className="css-value-colour">
-                        <input 
-                            className="css-value-colour-radio"
-                            type="radio" 
-                            id={`radio${id}-${col}`}
-                            name={`col-${id}`} 
-                            value={col} 
-                            checked={col === cssValue} 
-                            onChange={updateHandler} 
-                        />
-                        <label htmlFor={`radio${id}-${col}`} className="css-value-colour-label">{optName}</label>
-                        {/* <br />
-                        <ColourItem 
-                            customColourValue={getCssValue(col)}
-                            property={col}
-                            disabled={true}
-                        /> */}
-                    </div>
-                );
-            })}
+        <div className="css-value-colour">
+            {showIncludeColours && (
+                <select name={`col-${id}`} onChange={updateHandler} value={cssValue}>
+                    {includeColours.map(col => (
+                        <option key={col} value={col}>
+                            {getCssValueDetails(col)?.propertyName ?? col}
+                        </option>
+                    ))}
+                    <option value={customColourValue}>Custom</option>
+                </select>
+            )}
 
-            <div className="css-value-colour">
-                {showIncludeColours && (
-                    <>
-                        <input 
-                            className="css-value-colour-radio"
-                            type="radio" 
-                            id={`radio${id}-custom`}
-                            name={`col-${id}`} 
-                            value={customColourValue} 
-                            checked={!useIncludedColour} 
-                            onChange={updateHandler} 
-                        />
-                        <label htmlFor={`radio${id}-custom`} className="css-value-colour-label">Custom</label>
-                        <br />
-                    </>
-                )}
-                {showCustomColour && (
-                    <ColourItem 
-                        id={id}
-                        theme={theme}
-                        customColourValue={customColourValue}
-                        updateHandler={updateHandler}
-                        property={property}
-                        disabled={useIncludedColour}
-                    />
-                )}
-            </div>                
-        </>
+            {showCustomColour && (
+                <ColourItem 
+                    id={id}
+                    theme={theme}
+                    customColourValue={customColourValue}
+                    updateHandler={updateHandler}
+                    property={property}
+                    disabled={useIncludedColour}
+                />
+            )}
+        </div>
     );
 };
 

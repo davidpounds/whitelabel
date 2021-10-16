@@ -1,5 +1,4 @@
 .preview {
-    --button-radius: 5px;
     padding: 1rem 2rem;
     background-color: var(--site-background-colour);
     color: var(--body-text-colour);
@@ -58,7 +57,6 @@
     font-size: var(--heading4-size);
 }
 .preview .button {
-    border-radius: var(--button-radius);
     padding: 0.5rem 1rem;
     font-size: var(--body-text-size);
     border: 1px solid;
@@ -73,15 +71,8 @@
     background-color: var(--btn-secondary-background-colour);
 }
 .preview .button-option {
-    border-radius: 0;
     color: var(--btn-option-inactive-text-colour);
     background-color: var(--btn-option-inactive-background-colour);
-}
-.preview .button-option:first-of-type {
-    border-radius: var(--button-radius) 0  0 var(--button-radius);
-}
-.preview .button-option:last-of-type {
-    border-radius: 0 var(--button-radius) var(--button-radius) 0;
 }
 .preview .button-option + .button-option {
     border-left: 0;

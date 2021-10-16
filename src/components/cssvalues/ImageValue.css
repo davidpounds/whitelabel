@@ -19,8 +19,6 @@
     text-align: center;
 }
 .css-value-image-label {
-    --button-radius: 5px;
-    border-radius: var(--button-radius);
     border: 1px solid;
     background: #eee;
     padding: 0.5rem 1rem;

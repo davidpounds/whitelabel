@@ -93,7 +93,7 @@
             "includeColours": ["--site-background-colour", "--primary-brand-colour", "--secondary-brand-colour"],
             "value": {
                 "light": "--site-background-colour",
-                "dark": "--site-background-colour"
+                "dark": "--body-text-colour"
             }
         },
         {
@@ -104,7 +104,7 @@
             "includeColours": ["--site-background-colour", "--primary-brand-colour", "--secondary-brand-colour"],
             "value": {
                 "light": "--site-background-colour",
-                "dark": "--site-background-colour"
+                "dark": "--body-text-colour"
             }
         },
         {
@@ -226,7 +226,7 @@
             "property": "--btn-primary-text-colour",
             "includeColours": ["--site-background-colour", "--body-text-colour", "--primary-brand-colour", "--secondary-brand-colour"],
             "value": {
-                "light": "--body-text-colour",
+                "light": "--site-background-colour",
                 "dark": "--body-text-colour"
             }
         },
@@ -270,7 +270,7 @@
             "property": "--btn-option-active-text-colour",
             "includeColours": ["--site-background-colour", "--body-text-colour", "--primary-brand-colour", "--secondary-brand-colour"],
             "value": {
-                "light": "--body-text-colour",
+                "light": "--site-background-colour",
                 "dark": "--body-text-colour"
             }
         },

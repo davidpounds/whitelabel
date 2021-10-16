@@ -1,16 +1,5 @@
-.section {
-    display: grid;
-    column-gap: var(--grid-padding, 0);
-    grid-template-columns: 50% 50%;
-}
 .section-heading {
-    grid-column: 1 / -1;
     font-weight: 200;
     margin: 1rem 0 0.2rem 0;
     border-bottom: 1px solid #999;
-}
-@media screen and (max-width: 50rem) {
-    .section {
-        grid-template-columns: 100%;
-    }
 }
