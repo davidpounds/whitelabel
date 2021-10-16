@@ -24,6 +24,21 @@
     font-size: 1.6rem;
     border-bottom: 1px solid;
 }
+.preview .colour-swatch {
+    --swatch-size: 2rem;
+    display: inline-block;
+    vertical-align: middle;
+    width: var(--swatch-size);
+    height: var(--swatch-size);
+    border: 1px solid #333;
+    border-radius: calc(var(--swatch-size) / 2);
+}
+.preview .colour-swatch.primary {
+    background-color: var(--primary-brand-colour);
+}
+.preview .colour-swatch.secondary {
+    background-color: var(--secondary-brand-colour);    
+}
 .preview .page-heading {
     padding: 1.4rem 1rem 1rem 1rem;
     background-color: var(--page-header-colour);

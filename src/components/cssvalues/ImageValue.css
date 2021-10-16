@@ -24,6 +24,7 @@
     padding: 0.5rem 1rem;
     width: auto;
     align-self: flex-start;
+    margin: 0 0.2rem 0 0;
 }
 .css-value-image-input {
     position: absolute;

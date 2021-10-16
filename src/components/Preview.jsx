@@ -10,6 +10,10 @@ const Preview = props => {
         <div className={`preview ${theme}`}>
             <div className="preview-heading">{displayThemeName} theme</div>
 
+            <div className="preview-subheading">Brand colours</div>
+            <p>Primary brand colour: <span className="colour-swatch primary" /></p>
+            <p>Secondary brand colour: <span className="colour-swatch secondary" /></p>
+
             <div className="preview-subheading">Page header</div>
             <header className="page-heading">
                 <div className="preview-header-logo" title="Logo preview" />
